@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1acaecda32b6f644f90a9387c1ec4a88, type: 3}
+  m_Name: GameingConf
+  m_EditorClassIdentifier: 
+  Fire: {fileID: 278408162646057102, guid: 7b8f3f0ad4c33c048b71204405cb00cf, type: 3}
+  Foods:
+  - {fileID: 980444912662153818, guid: fc2eae9f29fec754094f22f1142ea249, type: 3}
+  - {fileID: 7606626260251448949, guid: 7446095c2868cde42bf9a3b6293b441f, type: 3}
+  FoodsCard:
+  - {fileID: 21300000, guid: 30719f0fee478aa4abf91a1ef09f9902, type: 3}
+  - {fileID: 21300000, guid: 042ddddbc86dfc444add4e279a59aaf6, type: 3}
