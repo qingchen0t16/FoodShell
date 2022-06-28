@@ -1,4 +1,5 @@
 using Assets.Scripts.Game.Foods;
+using Assets.Scripts.Model;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -39,10 +40,14 @@ public class xiaohuolu : FoodBase
     }
 
     /// <summary>
-    /// 初始化食物
+    /// 创建食物
     /// </summary>
-    protected override void _initFood(int level)
+    /// <param name="grid"></param>
+    /// <param name="level"></param>
+    public override void InitFood(M_Grid grid, int level = 1)
     {
+        base.InitFood(grid, level);
+
         InvokeRepeating("CreateFire", AttackSpeed, SpanAttack);
     }
 }

@@ -16,6 +16,10 @@ MonoBehaviour:
   Foods:
   - {fileID: 980444912662153818, guid: fc2eae9f29fec754094f22f1142ea249, type: 3}
   - {fileID: 7606626260251448949, guid: 7446095c2868cde42bf9a3b6293b441f, type: 3}
+  Mouses:
+  - {fileID: 6942070635953835392, guid: 9f0bc067993065d42b6f5ecf799ffd66, type: 3}
   FoodsCard:
   - {fileID: 21300000, guid: 30719f0fee478aa4abf91a1ef09f9902, type: 3}
   - {fileID: 21300000, guid: 042ddddbc86dfc444add4e279a59aaf6, type: 3}
+  Bullets:
+  - {fileID: 8403773827526690608, guid: 1d6b6184217a61246b18b8539b9b5f02, type: 3}

@@ -12,6 +12,7 @@ namespace Assets.Scripts.Game.Foods
         protected SpriteRenderer sr;
         protected M_Grid grid;
         protected float health; // 食物生命
+        protected bool isAttack;    // 是否攻击
 
         public float Health { get => health; }
 
@@ -29,7 +30,7 @@ namespace Assets.Scripts.Game.Foods
         /// <summary>
         /// 创建时
         /// </summary>
-        public GameObject InitCreate()
+        public virtual GameObject InitCreate()
         {
             an.speed = 0;
             sr.color = new Color(1, 1, 1, 1);
@@ -40,7 +41,7 @@ namespace Assets.Scripts.Game.Foods
         /// <summary>
         /// 在网格中的半透明
         /// </summary>
-        public GameObject InitGrid()
+        public virtual GameObject InitGrid()
         {
             an.speed = 0;
             sr.color = new Color(1, 1, 1, 0.5F);
@@ -51,19 +52,19 @@ namespace Assets.Scripts.Game.Foods
         /// <summary>
         /// 在网格中初始化(正常的)
         /// </summary>
-        public void InitFood(M_Grid grid,int level = 1)
+        public virtual void InitFood(M_Grid grid, int level = 1)
         {
             this.grid = grid;
             an.speed = 1;
             sr.color = new Color(1, 1, 1, 1);
-            _initFood(level);
+
+            isAttack = true;
         }
-        protected abstract void _initFood(int level);
 
         /// <summary>
         /// 受到伤害
         /// </summary>
-        public void Damage(float hurt)
+        public virtual void Damage(float hurt)
         {
             ColorEF(0.2F, new Color(0.5F, 0.5F, 0.5F), 0.01F);
             health -= hurt;
@@ -74,7 +75,7 @@ namespace Assets.Scripts.Game.Foods
         /// <summary>
         /// 死亡
         /// </summary>
-        public void Death()
+        public virtual void Death()
         {
             grid.Statu = GridStatu.main;
             grid.Food = null;
@@ -87,17 +88,16 @@ namespace Assets.Scripts.Game.Foods
         /// <returns></returns>
         protected IEnumerator ColorEF(float wTime, Color tColor, float dTime, UnityAction action = null)
         {
-            float cTime = 0;
+            float currTime = 0;
             float lerp;
 
-            while (cTime < wTime)
+            while (currTime < wTime)
             {
-                yield return new WaitForSeconds(dTime);
-                lerp = cTime / wTime;
-                cTime += dTime;
+                yield return new WaitForSeconds(0.05F);
+                lerp = currTime / wTime;
+                currTime -= dTime;
                 sr.color = Color.Lerp(Color.white, tColor, lerp);
             }
-
             sr.color = Color.white;
             if (action != null)
                 action();

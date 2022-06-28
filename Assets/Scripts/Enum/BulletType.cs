@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace Assets.Scripts.Enum
 {
-    public enum MouseStatu
+    public enum BulletType
     {
-        Main,
-        Walk,
-        Eat,
-        Dead
+        B001,   // 普通包子
     }
 }

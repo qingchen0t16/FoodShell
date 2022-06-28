@@ -2,7 +2,6 @@ using Assets.Scripts.Enum;
 using Assets.Scripts.Game.Foods;
 using Assets.Scripts.Model;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -143,6 +142,7 @@ public class GI_CardBar_Card : MonoBehaviour, IPointerEnterHandler, IPointerExit
                     }
                     CreateingFood = false;
                     CDDone = false; // 进入CD
+                    GI_PlayManager.Instance.SelectedCard = null;
 
                     GI_PlayManager.Instance.FireNum -= NeedFire;
                 }
@@ -156,9 +156,10 @@ public class GI_CardBar_Card : MonoBehaviour, IPointerEnterHandler, IPointerExit
                 }
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(1))    // 右键按下
             {
                 CreateingFood = false;
+                GI_PlayManager.Instance.SelectedCard = null;
             }
         }
     }
