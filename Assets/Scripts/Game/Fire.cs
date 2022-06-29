@@ -35,7 +35,7 @@ public class Fire : MonoBehaviour
         if (GI_PlayManager.Instance.AutoCollect)    // 自动收集
         {
             if (isSky)
-                transform.localPosition = new Vector3(transform.localPosition.x,tFirePosY,0);
+                transform.localPosition = new Vector3(transform.localPosition.x, tFirePosY, 0);
             Activate = true;
         }
         if (transform.localPosition.y <= tFirePosY && isSky && tFirePosY != -1) //  tFirePosY != -1是防止二次调用
@@ -112,7 +112,7 @@ public class Fire : MonoBehaviour
         if (activate)
             return;
         //AudioManager.Instance.PlayEFAudio(GIManager.Instance.gameSource.AuFireHover);
-        activate = true;
+        Activate = true;
     }
 
     /// <summary>

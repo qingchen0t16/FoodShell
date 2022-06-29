@@ -74,14 +74,14 @@ public class GI_CardBar_Card : MonoBehaviour, IPointerEnterHandler, IPointerExit
             {
                 case CardBarStatu.Feasible: // 可种植
                     maskImg.fillAmount = 0;
-                    foodImg.color = Color.white;
+                    if(GI_PlayManager.Instance.SelectedCard != this)    // 当前卡片没被选中
+                        foodImg.color = Color.white;
                     break;
                 case CardBarStatu.NeedCD:   // CD中
                     foodImg.color = Color.white;
                     CallCD();
                     break;
                 case CardBarStatu.NeedFire: // 火苗不足
-                        maskImg.fillAmount = 0;
                     foodImg.color = new Color(0.7F, 0.7F, 0.7F);
                     break;
                 case CardBarStatu.Disabled: // 火苗不足且CD中

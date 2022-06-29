@@ -44,7 +44,7 @@ public class GI_PlayManager : MonoBehaviour
     void Start()
     {
         FireNum = 100;
-        AutoCollect = true;
+        // AutoCollect = true;
     }
 
     // Update is called once per frame

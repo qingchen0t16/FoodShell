@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class pingmingshu : MouseBase
 {
-    protected override float Speed => 5;
+    protected override float Speed => 5F;
     protected override float AttackVal => 100F;
     protected override float MaxHealth => 100F;
 
